@@ -1,0 +1,9 @@
+---
+title: "Statistical analysis"
+---
+
+# Introduction
+
+This website will showcase my ability to produce a statistical analysis report. I have been given 4 questions to answer for a art collection dataset. I will need to take into consideration everything, like what preperation I need to do, what assumptions and diagnostics need checking and what problems may arise.
+
+In the navigation bar at the top of this page, there will be hyper-links that takes you to my statistical analysis for each question. 

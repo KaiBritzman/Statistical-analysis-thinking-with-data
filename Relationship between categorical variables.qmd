@@ -1,0 +1,56 @@
+---
+title: "Relationship between categorical variables"
+format: html
+---
+
+# Question 2: Relationship between categorical variables
+
+## Background
+
+The data I'm using is the art collection data set from the TidyTuesday GitHub repository . We are investigating if medium is related to thumbnail copyright status. My hypothesis is that it will because the way the artwork is protected depends on the type of art. Whether the artwork is hand-drawn or made with a computer, the copyright policies will be different. So, I expect that the medium will be related to thumbnail copyright status. To test this, I will be developing a statistical analysis plan to see if my hypothesis is true.
+
+## Research aim
+
+The research aim is to investigate whether the type of medium is related to thumbnail copyright status. This will mean we are looking for patterns between medium and thumbnail copyright status. For example, one thumbnail status may be more common for one medium than another. Mediums include the type of art (hand-drawn, painted etc). We will need to see whether certain mediums are more common within different thumbnail copyright status. This way, we will know if they are related.
+
+## Variables and data types
+
+The variables we will be using are medium and thumbnailCopyright. They are both qualitative variables. This means that they are non-numeric. They are just worded/descriptive data. So, they are slightly harder to work with as they can't be measured numerically but it's still possible.
+
+## Data preparation
+
+The data preparation we will need is filtering out the missing values from each column. Both columns will likely have missing data, so we need to make sure that these are filtered out for our analysis. This will ensure the results are accurate and not misleading due to poor data. We may also need to clean data entry errors. Poor data collection methods, or human error could lead to data being entered wrong, which can lead to inaccurate results. The data may also need changing so we have frequency counts. Since the data is just qualitative, we may need to transform it so it can be quantified in some way for analysis.
+
+## Proposed method
+
+The test that I will be conducting is a chi-square test. This is because we are working with categorical data. More specifically, we will run a chi-square test of independence. This is where you see whether observed frequencies differ from expected frequencies. This method will work best because we are seeing how the different mediums are distributed across different thumbnail copyright status. We will be able to see which status has the most of a specific medium to see if they are related. We are doing a chi-square independence test because it involves two categorical variables, rather than one, like in the goodness-of-fit test. We aren't using a t-test or ANOVA test because we don't have measurable data. The only data we can use is categorical data that we need to convert into counts. This way, we can run the chi-square test more effectively and we meet the assumptions.
+
+## Assumptions
+
+The assumptions of the chi-square test are the data must be in the form of counts. This means the data we are working with must represent counts or frequencies. The data must also be categorical data. This is data that can be divided into groups. Another assumption is that observations must be independent. This means that the data we are using is unrelated and you can't use one value to predict another accurately. Another assumption is that cells in the contingency table must be mutually exclusive. This means that each value can only belong to one cell. For example, if you are comparing gender and whether or not they went to university, an individual cannot be both male and female. The final assumption is that the expected frequency of each cell in the contingency table must be at least 5 in 80% of the cells. No cell should have an expected frequency of less than one.
+
+## Diagnostics and model checks
+
+We need ways to make sure that the assumptions of our tests are met. To make sure our data represents counts, we need to check the data. Is it counts/frequencies or is another data type? If it can be transformed into counts, transform it, if not, the chi-square test isn't suitable. To test if the data is categorical, we again need to check the data itself and make sure it can be sorted in groups. We can also use the isfactor() function in R. If it produces TRUE, then it's categorical, and FALSE means it is not categorical. This is the easiest way to check. For mutually exclusive observations, you would again analyse the data to make sure that all data is mutually exclusive. For sufficient expected cell counts, we can compute counts using a formula which divides the row total and column total combined with grand total to get an estimated count. If one value is less than one, then the assumptions aren't met.
+
+## Fallback strategy
+
+The fallback strategy if the assumptions aren't met varies. If we don't have enough data, we just need to collect more data so we have enough or do a fishers exact test which specialises in smaller samples. For no independence of data, we can use fisher's exact test, which is used to determine whether there is a significant association between categorical variables. If the data isn't categorical, we can instead use t-test or ANOVA if its instead continuous data. These tests are designed for numerical data, whereas chi-square was made specifically to analyse categorical data. If the data isn't mutually exclusive, the data can be recollected or corrected when doing the test.
+
+## Reporting and interpretation
+
+For the chi-square test of independence, you will be reporting the contingency table, degrees of freedom and the p-value. When doing an analysis report, having these values/figures will allow you to convey your findings accurately and others will know if there is any significance.
+
+For interpretation, you will be interpreting whether variables are associated or not. If there is, how stable is this association?. Doing this will let you see if your alternative hypothesis is true or not. If the association is weak and has many issues, then you fail to reject the null hypothesis.
+
+## References
+
+**AI WAS USED FOR THIS DOCUMENT: Used to make sure work makes sense and general research**
+
+Crawley, M (2011) **Statistics: An Introduction Using R**. Wiley. Available at: https://ebookcentral.proquest.com/lib/harperadams/reader.action?docID=827080&c=UERG&ppg=1 (Accessed: 28/05/2026) 
+
+MHango, J **Understanding the Chi-Square Test**. SQ4013: Thinking With Data. Available at: https://josephmhango.github.io/SQ4013/slides/chi.html#/title-slide (Accessed: 23/05/2026)
+
+Psychology.Town (2025) **Key Assumptions Behind the Chi-Square Test** Available at: https://psychology.town/statistics/key-assumptions-chi-square-test/ (Accessed: 23/05/2026)
+
+GeeksForGeeks (2026) **Logistic Regression in Machine Learning** Available at: https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/ (Accessed: 23/05/2026)

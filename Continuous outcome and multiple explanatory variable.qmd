@@ -1,0 +1,53 @@
+---
+title: "Continuous outcome and multiple explanatory variable"
+format: html
+---
+
+# Question 4: Continuous outcome and multiple explanatory variable
+
+## Background
+
+I'm using the data set artwork collection from the TidyTuesday GitHub repository. I'm investigating whether artwork width can be explained by multiple variables. My hypothesis is that it might do. This is because art can be influenced by various things due to legal reasons and how dimensions can affect size. I will see if this is correct by doing a statistical analysis and making a statistical analysis plan.
+
+## Research aim
+
+The research aim is to investigate how artwork width may be explained by a combination of temporal, dimensional and copyright related variables. We will need to see relationships and patterns with these variables and width. We will need to analyse them jointly rather than individually as the investigation requires the combination of these variables. We will need to find a way to compare all of these variables with artwork width to see if they have any correlation or form any kind of pattern.
+
+## Variables and data types
+
+The variables that will be used are width, year, height and thumbnailCopyright. Width, year and height are continuous numerical data and thumbnailCopyright is categorical. We are working with several variables for this investigation, however their data types are relatively consistent so they may be easy to work with.
+
+## Data preparation
+
+The preparation that will be needed for the data is transforming missing values in each column, to prevent misleading results. We would transform it by making all numerical data be equal to the average and make missing thumbnail copyright be equal to no copyright. We will also need to clean/filter data input errors. This may lead to biased results. For the year column, there is a column before it with long text that can go into the year column. This will lead to misleading results and error when doing the test because there will be two different data types in one column. This goes for all columns that may have overlaps with other columns. ThumbnailCopyright will also need converting to dummy variables as some regression models don't work with text categories. 
+
+## Proposed method
+
+The proposed method will be multiple linear regression. I have chosen this because it will help with explanation, rather than finding two means like a t-test. Since we have multiple independent variables, we cannot do simple linear regression, we need multiple linear regression. We also cant use a t-test because we have more than two groups. A t-test compare two group means, and we are working with three variables (excluding artwork width) which all have more than two groups. So, we would have to do multiple t-tests and that can cause a type l error. Also, its not all numerical data, so it wouldn't work. We aren't using a chi-square test because we have mostly numerical data.
+
+## Assumptions
+
+The assumptions for this model are the same as the simple linear regression. Variance of error is equal, independence must be there for all observations, the data follows a normal distribution and the data is linear.
+
+## Diagnostics and model checks
+
+To check the assumptions are correct, a residual plot can be used. This will be used to test linearity and equal variance. This is because a residual plot will show you if errors are consistent and if your data has equal/consistent variance. For normal distribution, a histogram can be used to assess whether the data produces a bell shape with the bars. Then, Independence can be checked by assessing the data collection methods to make sure other variables aren't involved. 
+## Fallback strategy
+
+If these assumptions aren't met, you can use different models/tests depending on what failed. If linearity failed, you can use a non-linear regression model, which is similar to normal regression but doesn't require linear data. If its independence that failed, you can use auto regression, as it investigates if the current value can be explained by the previous values. If variance and normality fails, you can do a log transformation, which condenses larger values and spreads out smaller ones. This helps stabilise how data is spread.
+
+## Reporting and interpretation
+
+For reporting, you will report overall model fit, p-values and regression coefficients. These will show if the variables you are using can explain a dependent variable. So, reporting them in a analysis report will help you present results and help decide what to do next.
+
+For interpretation, you will see which predictors are significant and coefficients. Coefficients can indicate if there is a pattern that can be used as evidence that a predictor can be used to explain the values of the dependent variable.
+
+## References
+
+**AI WAS USED FOR THIS DOCUMENT: Used to make sure work makes sense, research on ANOVA and general research**
+
+Jumbong, J (2025) **Multiple Linear Regression Analysis**. Available at: https://towardsdatascience.com/multiple-linear-regression-analysis/ (Abscessed: 26/05/2026)
+
+Bevans, R (2023) **Multiple Linear Regression \| A Quick Guide (Examples)**. Available at: https://www.scribbr.com/statistics/multiple-linear-regression/ (Accessed: 26/05/2026)
+
+MHango, J (2026) **Linear Regression**. SQ4013: Thinking With Data. Available at: https://josephmhango.github.io/SQ4013/slides/regression.html#/title-slide (Accessed: 26/05/2026)

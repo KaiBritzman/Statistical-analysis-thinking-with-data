@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: doc
+
+website:
+  title: "Statistical analysis"
+  navbar:
+    left:
+      - href: Group comparison.qmd
+        text: Group comparison
+      - Relationship between categorical variables.qmd
+      - Continuous outcome and one explanatory variable.qmd
+      - Continuous outcome and multiple explanatory variable.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual
+

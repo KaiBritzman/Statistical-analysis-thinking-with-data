@@ -1,0 +1,58 @@
+---
+title: "Continuous outcome and one explanatory variable"
+format: html
+---
+
+# Question 3: Continuous outcome and one explanatory variable
+
+## Background
+
+The data I'm using is the artcollection data-set from the TidyTuesday GitHub repository. I'm investigating whether year of creation will help explain variation in artwork width. My hypothesis is that it will. Art can vary from year to year. Different trends happen in different years. For example, fashion changes every year. Some fashion comes back for a bit, then new fashion designs come out etc. I think this is the same for art. Different styles will become more popular in different years, so year of creation can help explain variation in width. To see if my hypothesis is correct, I will conduct a statistical analysis on it and develop a SAP (statistical analysis plan)
+
+## Research aim
+
+The research aim is to investigate whether year of creation helps explain variation in artwork width. We will need to find patterns and relationships between width and year of creation. For example, we may find a pattern/relationship that shows artwork in 2014, 2016 and 2019 has larger artwork widths, where as years like 2015, 2017 may have produced narrower artwork.
+
+## Variables and data types
+
+The variables that will be used are year and width. These are both continuous numerical. Knowing the data types you are working with will help you determine your test without meaningfully analysing it. Some tests are made for specific data types. So, knowing how to identify them is important.
+
+## Data preparation
+
+Data preparation we may need is cleaning the data. For example, the column before year has longer words, so these go into the year column, which can ruin the data by having two different data types in one column. It would also make the data incorrect and lead to inaccurate results. This will be done for all columns. We also need to transform empty rows for both variables. Some data may be missing, so to make the results be as accurate as possible, transforming the missing data into the average of all other values will make sure we aren't filtering data while still making sure we get accurate results. 
+
+## Proposed method
+
+The proposed method will be doing is linear regression. Linear regression models the relationship between a single explanatory variable and an outcome variable. For this question, the explanatory variable is the year of creation, and the outcome variable is the width. With this, we can see if there is a relationship between the different years of creation. This test is the most appropriate because we are investigating a relationship between years and width. A chi-square test isn't appropriate because we don't have categorical values. We can't use a t-test because that compares means of 2 groups. While it is possible, we would need to do multiple t-tests because there are more than one groups, and conducting multiple t-tests can lead to errors. So, a linear regression model best suits our needs and other models wouldn't work due to data types and what we want from the test. The specific test that I would do is a simple linear regression test, as we are only working with one independent variable (year). A multiple linear regression test isn't suitable because we only have one predictor variable. We could use multiple linear regression if we were seeing if year AND medium affected width but since we only have year, simple linear regression is enough.
+
+## Assumptions
+
+The assumptions of this test are linearity, independence, normality and equal variance. Linearity means the relationship between variables follows a straight-line pattern. If the data is curved, the line of best fit wont work as its a linear line. Independence means each observation is independent from each other. This means knowing the value of one observation shouldn't allow you to accurately predict the other. Normality is when the residuals produce a bell-shaped curve. Residuals is the difference between predicted and observed values. Equal variance means all residuals are spread out consistently.
+
+## Diagnostics and model checks
+
+To check that our assumptions are correct, we can use a residual plot for linearity and equal variance. This is because a residual plot will plot the differences between predicted and observed values. This will let us assess whether the relationship between the data is linear. It will also let us see if we have equal variance as we can see each error and decide if they are equal/similar. For normality, we can use a histogram to see if the bars produce a bell shape when plotting errors Then for independence we can analyse how the data was collected to make sure all variables were independent. 
+
+## Fallback strategy
+
+If the diagnostic checks fail, then we need a fallback strategy. If linearity fails, then we can use non-linear regression. This is linear regression but instead the data doesn't need to be linear. If independence fails, then we can use auto regression. This a model that uses data where the current value can be explained by previous values. This allows for correlated data to be tested. If variance fails, we can transform the data by doing log transformations. This will condense large values and spread out smaller ones. This will help with stabilising variance. if normality fails, we can again transform the variables with log transformations.
+
+## Reporting and interpretation
+
+For reporting, you will report regression coefficients, the intercept, f-statistic and p-value. These are results you get from using the model and tests within it. These will allow you to present your findings and can provide more details rather than just saying variables can explain something.
+
+For interpretation, you will see whether the predictor can predict outcomes well and with accuracy, direction of the relationship between variables. These will show if there is a significant pattern that can be used to show a variable can explain something.
+
+## References
+
+**AI WAS USED FOR THIS DOCUMENT: Used to make sure work makes sense and general research**
+
+Crawley, M (2011) **Statistics: An Introduction Using R**. Wiley. Available at: https://ebookcentral.proquest.com/lib/harperadams/reader.action?docID=827080&c=UERG&ppg=1 (Accessed: 28/05/2026) 
+
+Frost, J (2024) **Linear Regression Explained with Examples**. Available at: https://statisticsbyjim.com/regression/linear-regression/ (Accessed: 26/05/2026)
+
+MHango, J (2026) **Linear Regression**. SQ4013: Thinking With Data. Available at: https://josephmhango.github.io/SQ4013/slides/regression.html#/title-slide (Accessed: 26/05/2026)
+
+DataCamp (2024) **Simple Linear Regression: Everything You Need to Know** Available at: https://www.datacamp.com/tutorial/simple-linear-regression (Accessed: 26/05/2026)
+
+ScienceInsights (2026) **What Is a Linear Regression Test and How Does It Work?** Available at: https://scienceinsights.org/what-is-a-linear-regression-test-and-how-does-it-work/ (Accessed: 26/05/2026)
